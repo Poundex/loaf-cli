@@ -1,0 +1,30 @@
+group 'net.poundex.loaf-cli'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenLocal()
+	jcenter()
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:2.4.11:indy'
+	compile group: 'com.lexicalscope.jewelcli', name: 'jewelcli', version: '0.8.9'
+	compile group: 'com.moandjiezana.toml', name: 'toml4j', version: '0.7.1'
+	compile group: 'org.springframework', name: 'spring-context', version: '4.3.9.RELEASE'
+	compile group: 'org.fusesource.jansi', name: 'jansi', version: '1.16'
+
+	compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+
+	compile files("${System.properties['java.home']}/../lib/tools.jar")
+
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
